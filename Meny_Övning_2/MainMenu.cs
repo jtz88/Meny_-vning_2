@@ -7,7 +7,7 @@ namespace Meny_Övning_2
     {
         public int DisplayMenu()
         {
-            //Metod för att generera huvudmeny och returnera användar val
+            //Metod för att generera huvudmeny och returnera användarval
 
             System.Console.WriteLine("\nVälkommen till huvudmenyn. Välj vilken funktion du vill testa!\n");
             System.Console.WriteLine("1.) Ungdom eller pensionär");
@@ -24,8 +24,12 @@ namespace Meny_Övning_2
 
         public void PriceForParty()
         {
+            // Metod för att räkna ut antal köpta biljetter samt total pris
+
             Console.WriteLine("\nHur många är ni i ert sällskap?");
             var result = Convert.ToInt32(Console.ReadLine());
+
+            var total = 0;
 
             for (int i = 0; i < result; i++)
             {
@@ -35,10 +39,23 @@ namespace Meny_Övning_2
 
                 Person 1 ålder: */
 
-                Console.WriteLine($"Ålder på person {i}: ");
+                Console.WriteLine($"Ålder på person {i+1}: ");
+                var age = Convert.ToInt32(Console.ReadLine());
 
-
+                if (age < 20)
+                {
+                    total += 80;
+                }
+                else if (age > 64)
+                {
+                    total += 90;
+                }
+                else
+                {
+                    total += 120;
+                }
             }
+            Console.WriteLine($"Erat sällskap består av {result} personer och kostnaden för hela sällskapet blir: {total}");
         }
 
         public void SplitAString()
