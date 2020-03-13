@@ -5,6 +5,7 @@ namespace Meny_Övning_2
 {
     public class MainMenu
     {
+
         public int DisplayMenu()
         {
             //Metod för att generera huvudmeny och returnera användarval
@@ -17,18 +18,31 @@ namespace Meny_Övning_2
             System.Console.WriteLine("5.) Avsluta programmet");
             System.Console.Write("\nMata in dit val: ");
 
-            //var line = Console.ReadLine();
+            var userInput = Console.ReadLine();
+
+            int num;
+            if (!int.TryParse(userInput, out num))
+            {
+                Console.WriteLine("{0} is not an integer", userInput);
+            }
+            return num;
+            
+            // Try Catch block för att säkerställa att userInput är en integer 
+
             //try
             //{
-            //    int num = Int32.Parse(line);
+            //    num = Int32.Parse(userInput);
+
             //}
             //catch (FormatException)
             //{
-            //    Console.WriteLine("{0} is not an integer", line);
-            //}
+            //    Console.WriteLine("{0} is not an integer", userInput);
 
-            var result = Console.ReadLine();
-            return Convert.ToInt32(result);
+            //}
+            //return num;
+
+            //var result = Console.ReadLine();
+            //return Convert.ToInt32(result);
 
         }
 
@@ -77,7 +91,6 @@ namespace Meny_Övning_2
 
             string[] splitResult = input.Split(' ');
             Console.WriteLine($"Det tredje ordet är: {splitResult[2]}");
-
 
         }
 
