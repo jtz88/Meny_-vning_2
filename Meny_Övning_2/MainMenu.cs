@@ -17,6 +17,16 @@ namespace Meny_Övning_2
             System.Console.WriteLine("5.) Avsluta programmet");
             System.Console.Write("\nMata in dit val: ");
 
+            //var line = Console.ReadLine();
+            //try
+            //{
+            //    int num = Int32.Parse(line);
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("{0} is not an integer", line);
+            //}
+
             var result = Console.ReadLine();
             return Convert.ToInt32(result);
 
