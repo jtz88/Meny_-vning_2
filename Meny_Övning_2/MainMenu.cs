@@ -51,6 +51,9 @@ namespace Meny_Övning_2
             // Metod för att räkna ut antal köpta biljetter samt total pris
 
             Console.WriteLine("\nHur många är ni i ert sällskap?");
+
+            // Kolla med TryParse som ovan för att säkerställa att tecknet är en integer
+
             var result = Convert.ToInt32(Console.ReadLine());
 
             var total = 0;
@@ -66,7 +69,14 @@ namespace Meny_Övning_2
                 Console.WriteLine($"Ålder på person {i+1}: ");
                 var age = Convert.ToInt32(Console.ReadLine());
 
-                if (age < 20)
+                // Bättre med en switch?
+
+                if (age < 5 || age > 100)
+                {
+                    total += 0;
+                }
+
+                else if (age < 20)
                 {
                     total += 80;
                 }
@@ -85,6 +95,8 @@ namespace Meny_Övning_2
         public void SplitAString()
         {
             // Metod för splitta användarens inmatning och skriva ut tredje index
+
+            // Använd .Trim();
 
             Console.WriteLine("\nSkriv en mening med minst 3 ord, det tredje ordet kommer att skrivas ut: ");
             string input = Console.ReadLine();
@@ -116,7 +128,12 @@ namespace Meny_Övning_2
             var result = Console.ReadLine();
             int age = Convert.ToInt32(result);
 
-            if (age < 20 )
+            if (age < 5 || age > 100)
+            {
+                Console.WriteLine("\nGrattis det är gratis för dig!\n");
+            }
+
+            else if (age < 20 )
             {
                 Console.WriteLine("\nUngdomspris: 80kr\n");
             }

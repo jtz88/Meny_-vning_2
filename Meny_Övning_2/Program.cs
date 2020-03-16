@@ -6,7 +6,7 @@ namespace Meny_Övning_2
     {
         static void Main(string[] args)
         {
-            // Instansera MainMenu klassen
+            // Instansiera MainMenu klassen
 
             MainMenu menu = new MainMenu();
 
